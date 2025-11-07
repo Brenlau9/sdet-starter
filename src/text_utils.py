@@ -15,7 +15,7 @@ def count_vowels(s: str, include_y: bool=False) -> int:
     vowels = set("aeiou")
     if include_y:
         vowels.update(set("yY"))
-    return sum(1 for ch in base.lower if ch in vowels)
+    return sum(1 for ch in base.lower() if ch in vowels)
 
 def to_title_case(s: str) -> str:
     words = s.split()
