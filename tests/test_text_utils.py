@@ -33,9 +33,13 @@ def test_count_vowels(s, include_y, expected):
 def test_to_title_case_basic():
     assert to_title_case("hello world") == "Hello World"
 
-def test_to_title_case_mixed_and_acronyms():
-    assert to_title_case("hello API gateway") == "Hello API Gateway"
-    assert to_title_case("simple api TEST") == "Simple Api TEST"
+@pytest.mark.parametrize("s,expected", [
+    ("hello API gateway", "Hello API Gateway"),
+    ("simple api TEST", "Simple Api TEST"),
+])
+
+def test_to_title_case_mixed_and_acronyms(s, expected):
+    assert to_title_case(s) == expected
 
 @pytest.mark.xfail(reason="Demonstration of expected failure for CI visibility")
 def test_expected_failure_demo():
