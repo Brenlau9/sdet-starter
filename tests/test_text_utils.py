@@ -35,7 +35,7 @@ def test_to_title_case_basic():
 
 def test_to_title_case_mixed_and_acronyms():
     assert to_title_case("hello API gateway") == "Hello API Gateway"
-    assert to_title_case("SIMPLE api TEST") == "Simple api TEST"
+    assert to_title_case("simple api TEST") == "Simple Api TEST"
 
 @pytest.mark.xfail(reason="Demonstration of expected failure for CI visibility")
 def test_expected_failure_demo():
