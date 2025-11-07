@@ -1,6 +1,6 @@
 # SDET Starter: Pytest + CI + HTML Report
 
-This is a ready-to-go **SDET starter** repository showing:
+This is a **SDET starter** repository showing:
 - Python unit tests with **pytest**
 - **Parameterized** test cases and an **xfail** example
 - **GitHub Actions** CI that runs tests on every push
