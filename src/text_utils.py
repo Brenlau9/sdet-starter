@@ -10,10 +10,12 @@ def is_palindrome(s: str) -> bool:
     return cleaned == cleaned[::-1]
 
 def count_vowels(s: str, include_y: bool=False) -> int:
-    vowels = set("aeiouAEIOU")
+    normalized = unicodedata.normalize("NFKD", s)
+    base = "".join(ch for ch in normalized if not unicodedata.combining(ch))
+    vowels = set("aeiou")
     if include_y:
         vowels.update(set("yY"))
-    return sum(1 for ch in s if ch in vowels)
+    return sum(1 for ch in base.lower if ch in vowels)
 
 def to_title_case(s: str) -> str:
     words = s.split()
