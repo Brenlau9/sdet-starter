@@ -1,5 +1,5 @@
 import pytest
-from src.text_utils import reverse_string, is_palindrome, count_vowels, to_title_case
+from src.text_utils import reverse_string, is_palindrome, count_vowels, to_title_case, remove_last_letter
 
 @pytest.mark.parametrize("inp,expected", [
     ("abc", "cba"),
@@ -40,6 +40,14 @@ def test_to_title_case_basic():
 
 def test_to_title_case_mixed_and_acronyms(s, expected):
     assert to_title_case(s) == expected
+
+@pytest.mark.paramterize("s,expected", [
+    ("hello", "hell"),
+    ("world", "worl"),
+])
+
+def test_remove_last_letter(s, expected):
+    assert remove_last_letter(s) == expected
 
 @pytest.mark.xfail(reason="Demonstration of expected failure for CI visibility")
 def test_expected_failure_demo():

@@ -26,3 +26,6 @@ def to_title_case(s: str) -> str:
         else:
             out.append(w[:1].upper() + w[1:].lower() if w else w)
     return " ".join(out)
+
+def remove_last_letter(s: str) -> str:
+    return s[:-1]
