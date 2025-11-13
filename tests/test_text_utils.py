@@ -41,7 +41,7 @@ def test_to_title_case_basic():
 def test_to_title_case_mixed_and_acronyms(s, expected):
     assert to_title_case(s) == expected
 
-@pytest.mark.parameterize("s,expected", [
+@pytest.mark.parametrize("s,expected", [
     ("hello", "hell"),
     ("world", "worl"),
 ])
